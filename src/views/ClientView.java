@@ -28,7 +28,7 @@ public class ClientView {
 
         title = "Введите имя клиента: ";
         System.out.print(title);
-        name = Validator.validateName(scanner);
+        name = Validator.validateName(scanner, "клиента");
         model.setName(name);
 
         title = "Введите количество: ";
