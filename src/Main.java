@@ -1,15 +1,24 @@
 import controllers.ClientController;
+import controllers.SellerController;
 import models.Client;
+import models.Seller;
 import views.ClientView;
+import views.SellerView;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Client model = new Client();
-        ClientView view = new ClientView(model);
-        ClientController controller = new ClientController(model, view);
+        Client client = new Client();
+        ClientView clientView = new ClientView(client);
+        ClientController clientController = new ClientController(client, clientView);
+
+        Seller seller = new Seller();
+        SellerView sellerView = new SellerView(seller);
+        SellerController sellerController = new SellerController(seller, sellerView);
+
         // Запуск программы/приложения
-        controller.runApp();
+//        clientController.runApp();
+        sellerController.runApp();
     }
 }
