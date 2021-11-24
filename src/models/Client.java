@@ -42,9 +42,13 @@ import base.Payment;
             return quota * price;
         }
 
+        public double calculatePayment() {
+            return quantity * price;
+        }
+
         // Расчёт платежа, с учетом скидки.
         @Override
-        public double calculatePayment(double payment, double discount) {
+        public double calculatePaymentWithDiscount(double payment, double discount) {
             return payment - discount;
         }
 
