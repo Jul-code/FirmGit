@@ -21,14 +21,14 @@ public class ClientController {
 
         String name = model.getName();
 
+//        double paymentInitial = model.calculatePayment(); // TODO Why?
         double paymentInitial = model.calculatePayment(model.getQuantity(), model.getPrice());
         String paymentInitialRounded = Rounder.roundValue(paymentInitial);
 
         double discount = model.calculateDiscount(paymentInitial);
         String discountRounded = Rounder.roundValue(discount);
 
-        String paymentRounded = Rounder.roundValue(model
-                .calculatePayment(paymentInitial, discount));
+        String paymentRounded = Rounder.roundValue(model.calculatePaymentWithDiscount(paymentInitial, discount));
 
         String output = "------------------------------\n" +
                 "Имя клиента: " + name + "\n" +
