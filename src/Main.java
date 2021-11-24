@@ -18,7 +18,13 @@ public class Main {
         SellerController sellerController = new SellerController(seller, sellerView);
 
         // Запуск программы/приложения
-//        clientController.runApp();
-        sellerController.runApp();
+        String parameter = args[0];//добавлена конфигурация Client и Seller.
+        // При выборе нужной конфигурации и перезагрузке
+        // запускается соответствующее приложение.
+        if (parameter.equals("client")) {
+            clientController.runApp();
+        } else if (parameter.equals("seller")) {
+            sellerController.runApp();
+        }
     }
 }
